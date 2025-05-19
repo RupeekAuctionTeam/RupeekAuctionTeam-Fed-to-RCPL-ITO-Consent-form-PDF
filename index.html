@@ -43,13 +43,6 @@
   <h2>ITO Consent Form</h2>
 
   <div class="input-group">
-    <label for="bidderType">Select Type:</label>
-    <select id="bidderType">
-      <option value="RCPL">RCPL</option>
-    </select>
-  </div>
-
-  <div class="input-group">
     <label for="secGlId">Enter Sec GL ID:</label>
     <input type="text" id="secGlId" placeholder="Enter Sec GL ID">
   </div>
@@ -137,10 +130,10 @@
 
       return convertToWords(num);
     }
+
     async function generatePDF() {
       const secGlId = document.getElementById('secGlId').value.trim();
       const todayClosureOs = document.getElementById('todayClosureOs').value.trim();
-      const bidderType = document.getElementById('bidderType').value;
 
       if (!secGlId) {
         alert('Please enter a Sec GL ID');
@@ -168,9 +161,7 @@
       const leftMargin = 20;
       let yPos = 20;
 
-      const addressText = bidderType === "Bidder"
-        ? "Rupeek Fintech Pvt Ltd,\nPlot 45/B, Shubham Complex,\nGround Floor, First A Main Road,\nFront Wing B, Sarakki Industrial Layout,\n3rd Phase, J P Nagar, Bengaluru,\nKarnataka- 560078"
-        : "Rupeek Capital Pvt Ltd,\nPlot 45/B, Shubham Complex,\nGround Floor, First A Main Road,\nFront Wing B, Sarakki Industrial Layout,\n3rd Phase, J P Nagar, Bengaluru,\nKarnataka- 560078";
+      const addressText = "Rupeek Capital Pvt Ltd,\nPlot 45/B, Shubham Complex,\nGround Floor, First A Main Road,\nFront Wing B, Sarakki Industrial Layout,\n3rd Phase, J P Nagar, Bengaluru,\nKarnataka- 560078";
 
       const contentParts = [
         { text: "To,", bold: true },
