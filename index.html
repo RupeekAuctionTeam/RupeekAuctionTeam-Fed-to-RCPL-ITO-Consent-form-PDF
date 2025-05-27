@@ -229,7 +229,7 @@
         yPos += doc.getTextDimensions(part.text, { maxWidth: 170 }).h + 4;
       });
 
-      doc.save(`ITO_Consent_${secGlId}.pdf`);
+      doc.save(`ITO_Consent_${secGlId}_${customerName}.pdf`);
       document.getElementById('result').innerHTML = 'PDF generated successfully!';
     }
 
