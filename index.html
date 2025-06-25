@@ -1,159 +1,268 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Link Access Page</title>
+  <meta charset="UTF-8">
+  <title>ITO Consent Form</title>
   <style>
-    html, body {
-      margin: 0;
-      padding: 10px;
-      background-color: #ede4e4;
-      font-family: Verdana;
-      text-align: center;
-      height: 100%;
-      overflow: hidden;
-    }
-
-    h1 {
-      font-size: 1vw;
-      color: #333;
-      margin-bottom: 10px;
-    }
-.wrapper {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 0 20px 40px;
-      max-height: 100vh;
-      overflow-y: auto;
-}
-
-    h2 {
-      font-size: 1.2vw;
-      color: #ffffff;
-      background-image: linear-gradient(to right, #ff4d00, #7d20cb);
-      padding: 5px;
-      border-radius: 6px;
-      cursor: pointer;
-      margin-top: 5px;
-    }
-
-    .link-box {
-      display: inline-block;
-      background-color: white;
-      padding: 5px 5px;
-      margin: 3px;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      text-decoration: none;
-      color: #000000;
-      font-weight: bold;
-      transition: background-color 0.2s;
-      font-size: 0.9vw;
-    }
-
-    .link-box:hover {
-      background-color: #849df5;
-    }
-
-    .category-content {
-      overflow: hidden;
-      max-height: 1000px;
-      transition: max-height 0.5s ease;
-    }
-
-    .collapsed {
-      max-height: 0;
-      transition: max-height 0.5s ease;
-    }
-
-    /* Fit entire content to screen with scroll if needed */
-    .wrapper {
-      max-height: 100vh;
-      overflow-y: auto;
-      padding-bottom: 20px;
-    }
-@media (max-width: 768px) {
     body {
-      padding: 10px;
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background-image: linear-gradient(to right, #ff4d00, #7d20cb);
+      color: white;
+      position: static;
     }
-
-    .wrapper {
-      padding: 0 10px 30px;
-      margin: 0 auto;
+    .input-group {
+      margin-bottom: 15px;
     }
-
-    .link-box {
-      font-size: 14px;
-      width: 100%;
-      box-sizing: border-box;
-      margin: 10px 0;
+    label {
+      display: block;
+      margin-bottom: 5px;
     }
-
-    h1, h2 {
-      font-size: 18px;
-      text-align: center;
+    input, select {
+      border: double;
+      width: 250px;
+      padding: 5px;
+      margin-right: 20px;
     }
-
-    h2 {
-      padding: 10px;
+    button {
+      padding: 15px 25px;
+      background-image: linear-gradient(to right, #ff4d00, #7d20cb);
+      color: white;
+      border: solid;
+      cursor: pointer;
+      border-radius: 20px;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    #result {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+    #customerForm {
+      margin-top: 20px;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 15px;
+      border-radius: 10px;
+      display: none;
     }
   </style>
 </head>
 <body>
-  <div class="wrapper">
-    <h1>Important Links</h1>
 
-    <h2 onclick="toggleCategory(this)">Google Sheets</h2>
-    <div class="category-content">
+  <h2>ITO Consent Letter Fed to RCPL</h2>
 
-      <a class="link-box" href="https://docs.google.com/spreadsheets/d/1_PHE8B9SuC2u6Yi-vE-YmnRZTiEokgw7wGjNDn1NGw4/edit?gid=1468408575#gid=1468408575" target="_blank">Sales Force Tickets Tracker</a>
-      <a class="link-box" href="https://docs.google.com/spreadsheets/d/1ejVRg2D8Qp3IBf7NE_L21Wc33eI2C6GU_KWsCmVn3AA/edit?gid=0#gid=0" target="_blank">Pre Auction Calling Sheet</a>
-<a class="link-box" href="https://docs.google.com/spreadsheets/d/1OKTXDIKTCfSjiDsMJivefMOKjGMcmaZsRYEvldDOb6o/edit?gid=0#gid=0" target="_blank">Post Auction Calling Sheet</a>
-      <a class="link-box" href="https://docs.google.com/spreadsheets/d/1GvpfvSq6hOlQDJXmUpHKEp0biJvRwI5_Vm4E4_UCO6s/edit?gid=581047884#gid=581047884" target="_blank">PAN Release and Repledge</a>
-      <a class="link-box" href="https://docs.google.com/spreadsheets/d/1-KGnb0_oKHLJ2-g-GfwKHCO1It_A1iQeAFBpWAbOFJU/edit?gid=1067639263#gid=1067639263" target="_blank">Branch Details</a>
-      <a class="link-box" href="https://docs.google.com/spreadsheets/d/1OC5xPWdh78C81gzGgw9hmHN2CRUm6F35yvJY-CvlNrg/edit?gid=1991574106#gid=1991574106" target="_blank">Post-Auction Master Sheet</a>
-      <a class="link-box" href="https://docs.google.com/spreadsheets/d/1Hup_cWbBdcftM5pJurTKBSz_Zpcxt8wKB51svMbqRP4/edit?gid=253090330#gid=253090330" target="_blank">Post Auctioned Data-LP</a>
-      <a class="link-box" href="https://docs.google.com/spreadsheets/d/1VIheON6y-CnGPb-IW1fisXdmnF2UHDwNo-3U13_rNf4/edit?gid=0#gid=0" target="_blank">Post Auction BO Recon</a>
-      <a class="link-box" href="https://docs.google.com/spreadsheets/d/1pJNtuM9AB1dpCK59UfL61tkrMwvfbDoY14WeQ1pRMAI/edit?gid=2142952932#gid=2142952932" target="_blank">Collection ITO Master</a>
-      <a class="link-box" href="https://docs.google.com/spreadsheets/d/1lYFSXfhFiYJx7fwRYyY4MWoCYneBolDyhAOlp60_bz0/edit?gid=888206891#gid=888206891" target="_blank">Collateral Pending at Vault</a>
-      <a class="link-box" href="https://docs.google.com/spreadsheets/d/1AuuTSyZqEFU19uylehNXvhOD-5292GgLl97ZKT05ex0/edit?pli=1&gid=0#gid=0" target="_blank">RE/PR/Ret/Override Active Schemes</a>
-    </div>
-
-    <h2 onclick="toggleCategory(this)">Forms</h2>
-    <div class="category-content">
-<a class="link-box" href="https://docs.google.com/spreadsheets/d/1gHaXfk77Jq9qdwhXA8yl-ctWr7MpHIFKm9sMN4duV_w/edit?gid=1711030327#gid=1711030327" target="_blank">Inhouse Recovery Responses</a>
-      <a class="link-box" href="https://docs.google.com/forms/d/e/1FAIpQLScVcLnZjPYVO4DQWZt_4yA24gPxC7puUESkYt_tyw4DE6dF2Q/viewform" target="_blank">Inhouse Recovery Update Form</a>
-      <a class="link-box" href="https://docs.google.com/forms/d/e/1FAIpQLSdNoHUiUOFtBj-NX1CuLRWxp-zXH0sNBKjuunQxHozAOf1tHA/viewform?pli=1&pli=1" target="_blank">ITO / RnRP Bokking Form</a>
-      <a class="link-box" href="https://docs.google.com/forms/d/e/1FAIpQLSekCFOSrNt2mbnpYASRCmzC3S1JVdldkNogI4Do3hZcc2qaYQ/viewform" target="_blank">Un-Resolved SF Tickets Form</a>
-    </div>
-
-    <h2 onclick="toggleCategory(this)">Tools & Calculators</h2>
-    <div class="category-content">
-      <a class="link-box" href="https://rupeekauctionteam.github.io/RupeekAuctionTeam-Fed-to-RCPL-ITO-Consent-form-PDF/" target="_blank">Fed to RCPL ITO Consent form</a>
-      <a class="link-box" href="https://rupeekauctionteam.github.io/RupeekAuctionTeam-RCPL-to-Fed-ITO-Consent-form-PDF/" target="_blank">RCPL to Fed ITO Consent form</a>
-      <a class="link-box" href="https://rupeekauctionteam.github.io/DA-Calculator/" target="_blank">DA-Calculator</a>
-      <a class="link-box" href="https://script.google.com/macros/s/AKfycbw6alagYi5xanz9fW3h1F1oOEnMOXib0myb_HLtTP8eRiGl0s96QgDW_6RE-GhnOLTBog/exec" target="_blank">Branch Mail Sender</a>
-    </div>
-
-    <h2 onclick="toggleCategory(this)">Platforms</h2>
-    <div class="category-content">
-      <a class="link-box" href="https://rupeek.lightning.force.com/lightning/page/home" target="_blank">Salesforce</a>
-      <a class="link-box" href="https://vaani.rupeek.com/rupeek/agent/agent.php" target="_blank">VAANI Dialer</a>
-<a class="link-box" href="https://vaani.rupeek.com/rupeek/admin/admin.php" target="_blank">VAANI Admin</a>
-      <a class="link-box" href="https://rupeekwebsvc.rupeek.com/" target="_blank">Core DB</a>
-      <a class="link-box" href="https://growth.rupeek.com/login" target="_blank">Growth</a>
-      <a class="link-box" href="https://app1.leegality.com/login" target="_blank">Leegality</a>
-      <a class="link-box" href="https://tableau-prod.rupeek.com/#/site/Rupeek/explore?:iid=27" target="_blank">Tableau</a>
-      <a class="link-box" href="https://tableau-prod.rupeek.com/#/site/Rupeek/views/RCPLStatementGenerator/Dashboard?:iid=1" target="_blank">RCPL ledger</a>
-    </div>
+  <div class="input-group">
+    <label for="secGlId">Enter Sec GL ID:</label>
+    <input type="text" id="secGlId" placeholder="Enter Sec GL ID">
   </div>
 
+  <div class="input-group">
+    <label for="todayClosureOs">Today's Closure OS:</label>
+    <input type="number" id="todayClosureOs" placeholder="Enter Today's Closure OS">
+  </div>
+
+  <button onclick="generatePDF()">Generate PDF</button>
+  <div id="result"></div>
+
+  <div id="customerForm">
+    <h3>Add Customer Details</h3>
+    <div class="input-group"><label>Name:</label><input type="text" id="name"></div>
+    <div class="input-group"><label>Phone No:</label><input type="text" id="phone"></div>
+    <div class="input-group"><label>PAN No:</label><input type="text" id="pan"></div>
+    <div class="input-group"><label>Address:</label><input type="text" id="address"></div>
+    <div class="input-group"><label>Sec GL ID:</label><input type="text" id="newSecGlId"></div>
+    <div class="input-group"><label>Unsec GL ID:</label><input type="text" id="unsecGlId"></div>
+    <div class="input-group"><label>City:</label><input type="text" id="city"></div>
+    <div class="input-group"><label>DOB:</label><input type="date" id="dob"></div>
+    <button onclick="submitCustomerDetails()">Submit Customer Details</button>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   <script>
-    function toggleCategory(header) {
-      const content = header.nextElementSibling;
-      content.classList.toggle('collapsed');
+    const { jsPDF } = window.jspdf;
+    const SHEET_ID = '1TtVV3E_PIu99ulrbFh-0S9Z0Bkoed3HD5KAj_HM0-iI';
+    const API_KEY = 'AIzaSyANJ_TPyJDM4Yc3O0Ms9e_UIokAOluDqL0';
+    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzGZ_n7eij898Vxw40ATds8nR2F0JUowH-jsJmeYOxSejLJWLaCDdPIF0adqW1cSnY/exec'; // <-- REPLACE THIS
+
+    async function fetchSheetData(secGlId) {
+      try {
+        const response = await fetch(`https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/Cx%20Data?key=${API_KEY}`);
+        const data = await response.json();
+        if (!data.values) throw new Error('No data found in sheet or API error');
+        const rows = data.values;
+        const row = rows.slice(1).find(r => (r[5] ? r[5].toString() : '') === secGlId);
+        if (!row) return null;
+
+        return {
+          customerName: row[0] || "N/A",
+          phoneNumber: row[1] || "N/A",
+          pan: row[2] || "N/A",
+          age: row[3] || "N/A",
+          address: row[4] || "N/A",
+          secGlId: row[5] || "N/A",
+          unsecGlId: row[6] || "N/A",
+          closureOs: row[7] || "N/A",
+          city: row[7] || "N/A"
+        };
+      } catch (error) {
+        console.error('Fetch Error:', error);
+        return null;
+      }
+    }
+
+    function numberToWords(num) {
+      if (num === null || num === undefined || isNaN(num)) return '';
+      num = parseInt(num);
+      const a = ['', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven',
+        'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen'];
+      const b = ['', '', 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety'];
+
+      function convertToWords(n) {
+        let str = '';
+        const crore = Math.floor(n / 10000000); n %= 10000000;
+        const lakh = Math.floor(n / 100000); n %= 100000;
+        const thousand = Math.floor(n / 1000); n %= 1000;
+        const hundred = Math.floor(n / 100);
+        const rest = n % 100;
+        if (crore) str += convertToWords(crore) + ' crore ';
+        if (lakh) str += convertToWords(lakh) + ' lakh ';
+        if (thousand) str += convertToWords(thousand) + ' thousand ';
+        if (hundred) str += a[hundred] + ' hundred ';
+        if (rest) {
+          if (str !== '') str += 'and ';
+          str += rest < 20 ? a[rest] : b[Math.floor(rest / 10)] + (rest % 10 ? ' ' + a[rest % 10] : '');
+        }
+        return str.trim();
+      }
+
+      return convertToWords(num);
+    }
+
+    async function generatePDF() {
+      const secGlId = document.getElementById('secGlId').value.trim();
+      const todayClosureOs = document.getElementById('todayClosureOs').value.trim();
+
+      if (!secGlId) {
+        alert('Please enter a Sec GL ID');
+        return;
+      }
+
+      document.getElementById('result').innerHTML = 'Fetching data...';
+
+      const customerData = await fetchSheetData(secGlId);
+
+      if (!customerData) {
+        document.getElementById('result').innerHTML = `No customer found with Sec GL ID: ${secGlId}`;
+        document.getElementById('customerForm').style.display = 'block';
+        document.getElementById('newSecGlId').value = secGlId;
+        return;
+      }
+
+      document.getElementById('customerForm').style.display = 'none';
+
+      const doc = new jsPDF();
+      const todayDate = new Date().toLocaleDateString('en-IN');
+      const amountValue = parseInt(todayClosureOs || customerData.closureOs);
+      const amountInWords = numberToWords(amountValue);
+      const fullAmount = `${amountValue} (${amountInWords})`;
+
+      doc.setFont("Verdana");
+      doc.setFontSize(11);
+      const leftMargin = 20;
+      let yPos = 20;
+
+      const addressText = "Rupeek Fintech Pvt Ltd,\nPlot 45/B, Shubham Complex,\nGround Floor, First A Main Road,\nFront Wing B, Sarakki Industrial Layout,\n3rd Phase, J P Nagar, Bengaluru,\nKarnataka- 560078";
+
+      const contentParts = [
+        { text: "To,", bold: true },
+        { text: addressText, bold: false },
+        { text: "\n\nSubject: Consent and Undertaking for doing gold loan transfer to Rupeek Capital Private Limited.", bold: true },
+        { text: "Sir/ Madam,", bold: true },
+        {
+          text: `\nI, ${customerData.customerName}, aged ${customerData.age}, resident of ${customerData.address}, having Pan No: ${customerData.pan}, Registered Mobile No ${customerData.phoneNumber}, do hereby consent, undertake and confirm the following:`,
+          bold: false
+        },
+        {
+          text: `I have an existing gold loan with Federal Bank ${customerData.secGlId} that I wish to close and take a secured gold loan from Rupeek Capital.`,
+          bold: false
+        },
+        {
+          text: `Availed loan facility through Rupeek with Federal Bank with Gold Loan Account No ${customerData.secGlId} and Unsecured loan from RCPL with Loan Account No ${customerData.unsecGlId}. The Loan facilities availed by me are due for renewal. Hence, I have approached Rupeek Capital Pvt Ltd for availing loan facilities that will be used to close my existing loan with Federal Bank. I consent and acknowledge that Rupeek Capital Private Limited will be making loan closure payments for the above mentioned loans on my behalf.`,
+          bold: false
+        },
+        {
+          text: `I confirm that the outstanding towards the loan amount as on date ${todayDate} for loan closure stands at ${fullAmount}.`,
+          bold: false
+        },
+        {
+          text: "Further, I also agree, consent and undertake to release the collateral (gold) and book a loan facility with Rupeek Capital Private Limited against the same collateral. I further confirm that I am the absolute owner of the collateral under pledge and there are no disputes pending and the collateral is unencumbered.",
+          bold: false
+        },
+        {
+          text: "I acknowledge  that assessment of purity and weight of the Collateral by the Company at the time of pledging the Collateral is only based on a preliminary verification carried out at the time of granting the Loan and is not final and binding on the Company. I acknowledge, undertake and confirm that if the collateral (gold) pledged is found to be of not of the represented purity and weight or if found to be spurious in nature, I explicitly undertake to make good of the shortfall by pledging additional gold jewellery or make the repayment immediately.",
+          bold: true
+        },
+        {
+          text: "I also acknowledge and undertake that in the event of any difference amount arising out of appraisal, recovery dues, charges, penalties pending against the loan facilities will be added against the new loan facility or I also undertake to repay the pending due amounts prior to booking of new loan as applicable.",
+          bold: false
+        },
+        {
+          text: "I undertake and agree to book the loan with Rupeek Capital Pvt Ltd within 10 working days from the date of release of collateral from Federal Bank, failing which I confirm and consent to Rupeek Capital Pvt Ltd taking necessary action including liquidation or auction of collateral as applicable.",
+          bold: false
+        },
+        {
+          text: "I explicitly state that above consent and declaration are given by me voluntarily and from my free will, without any coercion or undue influence.",
+          bold: false
+        },
+        {
+          text: `\n\nDate: ${todayDate}                                                                                                  Borrower Name & Signature\n\nPlace: ${customerData.city}`,
+          bold: false
+        }
+      ];
+
+      contentParts.forEach(part => {
+        doc.setFont(part.bold ? "Verdana" : "Verdana", part.bold ? "bold" : "normal");
+        doc.text(part.text, leftMargin, yPos, { maxWidth: 170 });
+        yPos += doc.getTextDimensions(part.text, { maxWidth: 170 }).h + 4;
+      });
+
+      doc.save(`ITO_Consent_${secGlId}_${customerData.customerName}.pdf`);
+      document.getElementById('result').innerHTML = 'PDF generated successfully!';
+    }
+
+    async function submitCustomerDetails() {
+      const data = {
+        name: document.getElementById('name').value,
+        phone: document.getElementById('phone').value,
+        pan: document.getElementById('pan').value,
+        address: document.getElementById('address').value,
+        secGlId: document.getElementById('newSecGlId').value,
+        unsecGlId: document.getElementById('unsecGlId').value,
+        city: document.getElementById('city').value,
+        dob: document.getElementById('dob').value
+      };
+
+      try {
+        const response = await fetch(SCRIPT_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data)
+        });
+
+        alert("Details submitted successfully.");
+        document.getElementById('customerForm').style.display = 'none';
+      } catch (error) {
+        console.error('Submit Error:', error);
+        alert("Error occurred while submitting details.");
+      }
     }
   </script>
+
 </body>
 </html>
